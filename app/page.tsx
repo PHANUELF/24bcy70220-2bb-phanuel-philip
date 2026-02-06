@@ -30,8 +30,8 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-100 p-10">
-      <h1 className="text-3xl font-bold text-center mb-8">
+    <main className="min-h-screen bg-blue-100 p-10">
+      <h1 className="text-3xl font-bold text-center mb-8 text-blue-900">
         Product Listing App
       </h1>
 
@@ -69,17 +69,19 @@ export default function Home() {
       {/* PRODUCTS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {filteredProducts.length === 0 ? (
-          <p className="text-center text-gray-600 col-span-full">
+          <p className="text-center text-gray-700 col-span-full">
             No products found.
           </p>
         ) : (
           filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white p-6 rounded-lg border"
+              className="bg-white p-6 rounded-lg border border-blue-200 shadow-sm hover:shadow-md transition"
             >
-              <h2 className="text-xl font-semibold">{product.name}</h2>
-              <p className="text-gray-600">₹{product.price}</p>
+              <h2 className="text-xl font-semibold text-blue-900">
+                {product.name}
+              </h2>
+              <p className="text-gray-700">₹{product.price}</p>
               <p className="text-sm text-gray-500">{product.category}</p>
             </div>
           ))
